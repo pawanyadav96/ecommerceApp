@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/theme/app_text_styles.dart';
 import '../../cart/provider/cart_provider.dart';
 import '../model/product_model.dart';
 
@@ -45,34 +46,28 @@ class ProductDetailsScreen extends StatelessWidget {
                 children: [
                   Text(
                     product.title,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: AppTextStyles.heading
                   ),
 
                   const SizedBox(height: 10),
 
                   Text(
                     product.description,
-                    style: const TextStyle(fontSize: 16),
+                    style: AppTextStyles.small,
                   ),
 
                   const SizedBox(height: 20),
 
                   Text(
                     'Price: ₹ ${product.price}',
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style:AppTextStyles.body,
                   ),
 
                   const SizedBox(height: 10),
 
                   Text(
                     'Discounted Price: ₹ ${discountedPrice.toStringAsFixed(2)}',
-                    style: const TextStyle(fontSize: 18, color: Colors.green),
+                    style: AppTextStyles.body.copyWith(color: Colors.green)
                   ),
 
                   const SizedBox(height: 10),
@@ -105,31 +100,45 @@ class ProductDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(16),
 
-            const SizedBox(height: 30),
+        decoration: BoxDecoration(
+          color: Colors.white,
 
-            SizedBox(
-              width: double.infinity,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.08),
 
-              height: 55,
+              blurRadius: 10,
 
-              child: ElevatedButton(
-                onPressed: () {
-                  context.read<CartProvider>().addToCart(product);
-
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Added To Cart')),
-                  );
-                },
-
-                child: const Text(
-                  'Add To Cart',
-
-                  style: TextStyle(fontSize: 18),
-                ),
-              ),
+              offset: const Offset(0, -2),
             ),
           ],
+        ),
+
+        child: ElevatedButton(
+          onPressed: () {
+            context.read<CartProvider>().addToCart(product);
+
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(const SnackBar(content: Text('Added To Cart')));
+          },
+
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(14),
+            ),
+          ),
+
+          child: const Text(
+            'Add To Cart',
+            style: AppTextStyles.title,
+          ),
         ),
       ),
     );

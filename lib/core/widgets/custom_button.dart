@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../theme/app_text_styles.dart';
+
 class CustomButton extends StatelessWidget {
   final String title;
 
@@ -49,14 +51,7 @@ class CustomButton extends StatelessWidget {
               )
             : Text(
                 title,
-
-                style: const TextStyle(
-                  fontSize: 18,
-
-                  fontWeight: FontWeight.w600,
-
-                  color: Colors.white,
-                ),
+                style: AppTextStyles.title.copyWith(color: Colors.white)
               ),
       ),
     );

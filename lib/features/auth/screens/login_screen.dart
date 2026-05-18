@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/theme/app_text_styles.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../../../main_screen.dart';
 import '../provider/auth_provider.dart';
-
-
-import '../../dashboard/screens/dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -39,11 +37,7 @@ class LoginScreen extends StatelessWidget {
 
                 const Text(
                   "Hello,User",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight:
-                    FontWeight.bold,
-                  ),
+                  style: AppTextStyles.heading,
                 ),
 
                 const SizedBox(height: 40),
