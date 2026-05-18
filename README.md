@@ -1,16 +1,36 @@
 # ecommerceapp
 
-A new Flutter project.
+Authentication
+Google Sign-In using Firebase Authentication
+Persistent login session (auto-login)
+Logout functionality
+Proper error handling & login cancellation handling
+ 
+Dashboard
+User profile (Name, Email, Profile Image)
+Current device location (human-readable address)
+Location permission handling:
+Permission denied
+Permanently denied
+GPS disabled
 
-## Getting Started
+ Product Module
 
-This project is a starting point for a Flutter application.
+Product listing from API:
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Product details:
+Image carousel with page indicators
+Title, description, price
+Discount calculation
+Rating, brand, category
+Stock/availability status
+🔎 Features
+Infinite scrolling pagination
+Pull-to-refresh
+Search products
+Filter by category
+Sort by:
+Price Low → High
+Price High → Low
+Rating
