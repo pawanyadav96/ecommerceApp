@@ -15,43 +15,43 @@
    flutter run
 
 # Authentication
-Google Sign-In using Firebase Authentication
-Persistent login session (auto-login)
-Logout functionality
-Proper error handling & login cancellation handling
+1. Google Sign-In using Firebase Authentication
+2. Persistent login session (auto-login)
+3. Logout functionality
+4. Proper error handling & login cancellation handling
  
 # Dashboard
-User profile (Name, Email, Profile Image)
-Current device location (human-readable address)
-Location permission handling:
-Permission denied
-Permanently denied
-GPS disabled
+1. User profile (Name, Email, Profile Image)
+2. Current device location (human-readable address)
+3. Location permission handling:
+4. Permission denied
+5. Permanently denied
+6. GPS disabled
 
 # Product Module
-Product details:
-Image carousel with page indicators
-Title, description, price
-Discount calculation
-Rating, brand, category
-Stock/availability status
-Features
-Infinite scrolling pagination
-Pull-to-refresh
-Search products
-Filter by category
+1. Product details:
+2. Image carousel with page indicators
+3. Title, description, price
+4. Discount calculation
+5. Rating, brand, category
+6. Stock/availability status
+## Features
+1. Infinite scrolling pagination
+2. Pull-to-refresh
+3. Search products
+4. Filter by category
 Sort by:
-Price Low → High
-Price High → Low
-Rating
+1. Price Low → High
+2. Price High → Low
+3. Rating
 
 # Cart Module
-Add to cart functionality
-Prevent duplicate cart entries
-Increase / Decrease quantity
-Remove items
-Real-time cart updates across screens
-Cart badge counter
+1. Add to cart functionality
+2. Prevent duplicate cart entries
+3. Increase / Decrease quantity
+4. Remove items
+4. Real-time cart updates across screens
+5. Cart badge counter
  ## Cart Calculations
 Subtotal
 Discount calculation
@@ -64,7 +64,7 @@ No internet banner
 Retry mechanism for API failures
 
 # Architecture
-Provider (State Management)
-Clean folder structure
-Reusable widgets
-Service-based architecture
+1. Provider (State Management)
+2. Clean folder structure
+3. Reusable widgets
+4. Service-based architecture
