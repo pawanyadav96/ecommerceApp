@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/widgets/product_card.dart';
+import '../../cart/provider/cart_provider.dart';
+import '../../cart/screens/cart_screen.dart';
 import '../provider/product_provider.dart';
 import 'product_details_screen.dart';
 
@@ -45,6 +47,73 @@ class _ProductScreenState extends State<ProductScreen> {
         title: const Text('Products'),
 
         actions: [
+
+          Consumer<CartProvider>(
+
+            builder: (context, cartProvider, child) {
+
+              return Stack(
+
+                children: [
+
+                  IconButton(
+
+                    onPressed: () {
+
+                      Navigator.push(
+
+                        context,
+
+                        MaterialPageRoute(
+
+                          builder: (_) =>
+                          const CartScreen(),
+                        ),
+                      );
+                    },
+
+                    icon: const Icon(
+                      Icons.shopping_cart,
+                    ),
+                  ),
+
+                  if (cartProvider!.totalItems > 0)
+
+                    Positioned(
+
+                      right: 5,
+                      top: 5,
+
+                      child: Container(
+
+                        padding:
+                        const EdgeInsets.all(4),
+
+                        decoration: const BoxDecoration(
+
+                          color: Colors.red,
+
+                          shape: BoxShape.circle,
+                        ),
+
+                        child: Text(
+
+                          cartProvider!.totalItems
+                              .toString(),
+
+                          style: const TextStyle(
+
+                            color: Colors.white,
+
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
           PopupMenuButton(
             icon: const Icon(Icons.sort),
 

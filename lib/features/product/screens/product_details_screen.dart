@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../cart/provider/cart_provider.dart';
 import '../model/product_model.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -101,6 +103,30 @@ class ProductDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            SizedBox(
+              width: double.infinity,
+
+              height: 55,
+
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<CartProvider>().addToCart(product);
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Added To Cart')),
+                  );
+                },
+
+                child: const Text(
+                  'Add To Cart',
+
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ),
           ],
